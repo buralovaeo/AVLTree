@@ -29,7 +29,6 @@ public class Benchmark {
         originalArray = new int[ARRAY_SIZE];
     }
 
-    // Пункт 2
     public void generateRandomArray() {
         Random random = new Random(42);
         for (int i = 0; i < ARRAY_SIZE; i++) {
@@ -37,7 +36,6 @@ public class Benchmark {
         }
     }
 
-    // Пункт 3
     public void runInsertBenchmark() {
         AVLTree tree = new AVLTree();
 
@@ -51,7 +49,6 @@ public class Benchmark {
         }
     }
 
-    // Пункт 4
     public void runSearchBenchmark() {
         AVLTree tree = new AVLTree();
         for (int i = 0; i < ARRAY_SIZE; i++) {
@@ -72,7 +69,6 @@ public class Benchmark {
         }
     }
 
-    // Пункт 5
     public void runDeleteBenchmark() {
         Random deleteRandom = new Random(44);
 
@@ -94,7 +90,6 @@ public class Benchmark {
         }
     }
 
-    // Пункт 6: Сохранение всех результатов в файлы
     public void saveResults() throws Exception {
         // CSV файлы с детальными замерами
         try (PrintWriter w = new PrintWriter(new FileWriter("insert_results.csv"))) {
@@ -118,7 +113,6 @@ public class Benchmark {
             }
         }
 
-        // Файл со средними значениями (для отчета)
         try (PrintWriter w = new PrintWriter(new FileWriter("averages.txt"))) {
             w.println("СРЕДНИЕ ЗНАЧЕНИЯ");
             w.printf("Вставка (n=%d): время = %.2f мкс, операций = %.1f%n",
@@ -130,7 +124,6 @@ public class Benchmark {
         }
     }
 
-    // Статистические методы
     private double getAverageTime(long[] arr) {
         long sum = 0;
         for (long v : arr) sum += v;
@@ -143,7 +136,6 @@ public class Benchmark {
         return (double) sum / arr.length;
     }
 
-    // Вывод в консоль
     public void printAverages() {
         System.out.println("\nСРЕДНИЕ ЗНАЧЕНИЯ");
         System.out.printf("Вставка (n=%d): время = %.2f мкс, операций = %.1f%n",
