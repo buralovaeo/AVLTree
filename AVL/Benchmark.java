@@ -120,14 +120,13 @@ public class Benchmark {
 
         // Файл со средними значениями (для отчета)
         try (PrintWriter w = new PrintWriter(new FileWriter("averages.txt"))) {
-            w.println("========== СРЕДНИЕ ЗНАЧЕНИЯ ==========");
+            w.println("СРЕДНИЕ ЗНАЧЕНИЯ");
             w.printf("Вставка (n=%d): время = %.2f мкс, операций = %.1f%n",
                     ARRAY_SIZE, getAverageTime(insertTimes) / 1000, getAverageOps(insertOps));
             w.printf("Поиск (n=%d): время = %.2f мкс, операций = %.1f%n",
                     SEARCH_COUNT, getAverageTime(searchTimes) / 1000, getAverageOps(searchOps));
             w.printf("Удаление (n=%d): время = %.2f мкс, операций = %.1f%n",
                     DELETE_COUNT, getAverageTime(deleteTimes) / 1000, getAverageOps(deleteOps));
-            w.println("=====================================");
         }
     }
 
@@ -146,7 +145,7 @@ public class Benchmark {
 
     // Вывод в консоль
     public void printAverages() {
-        System.out.println("\n========== СРЕДНИЕ ЗНАЧЕНИЯ ==========");
+        System.out.println("\nСРЕДНИЕ ЗНАЧЕНИЯ");
         System.out.printf("Вставка (n=%d): время = %.2f мкс, операций = %.1f%n",
                 ARRAY_SIZE, getAverageTime(insertTimes) / 1000, getAverageOps(insertOps));
         System.out.printf("Поиск (n=%d): время = %.2f мкс, операций = %.1f%n",
